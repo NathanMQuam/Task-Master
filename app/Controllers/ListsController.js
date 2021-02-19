@@ -3,7 +3,10 @@ import { listsService } from "../Services/ListsService.js"
 
 // Private
 function _draw() {
-
+   let listsElem = document.getElementById('app')
+   let template = ''
+   ProxyState.lists.forEach(l => template += l.Template)
+   listsElem.innerHTML = template
 }
 
 

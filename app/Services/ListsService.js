@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import List from "../Models/List.js";
 
 class ListsService {
    constructor() {
@@ -8,6 +9,7 @@ class ListsService {
    
    createList({ title, color }) {
       console.log('createList(', title, color, ') from ListService');
+      ProxyState.lists = [new List({title, color}),...ProxyState.lists]
    }
 
    createListItem({itemTitle}) {
@@ -18,12 +20,12 @@ class ListsService {
       console.log('Completed list item:', itemId);
    }
 
-   deleteList(listId) {
-      console.log('Tried to delete list:', listId);
-   }
-
    deleteListItem(itemId) {
       console.log('Tried to delete List Item:', itemId);
+   }
+
+   deleteList(listId) {
+      console.log('Tried to delete list:', listId);
    }
 
 }
