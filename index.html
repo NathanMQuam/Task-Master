@@ -11,6 +11,9 @@
     <title>Task-Master</title>
 </head>
 
+
+
+
 <body>
     <header>
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
@@ -20,8 +23,45 @@
             </a>
         </nav>
     </header>
+
+
+
     <main>
         <div id="app" class="container">
+            <aside class="position-fixed p-3" style="right: 0; top: 0;">
+                <button class="btn btn-primary shadow" type="button" data-toggle="modal" data-target="#exampleModal">
+                    New Task List
+                </button>
+            </aside>
+
+            
+            <!-- Create New List Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <form class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New Task List</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <input type="color" name="listColor">
+                            <input type="text" name="listTitle" placeholder="New List Title" required>
+                            <!-- <button type="submit">Create Task List</button> -->
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Create Task List</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
             <div class="row py-3" id="row1">
                 <div class="col">
                     <div class="card shadow">
@@ -31,21 +71,24 @@
                                 +
                             </button>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><button class="btn btn-primary"></button> Cras justo odio</li>
-                            <li class="list-group-item"><button class="btn btn-primary"></button>Dapibus ac facilisis in</li>
-                            <li class="list-group-item"><button class="btn btn-primary"></button>Vestibulum at eros</li>
+                        <ul class="list-group list-group-flush position-relative">
+                            <li class="list-group-item">
+                                <button class="btn btn-primary">C?</button>
+                                Cras justo odio
+                                <button class="btn btn-danger position-absolute" style="right: 1rem;">Delete List Item</button>
+                            </li>
+                            <li class="list-group-item"><button class="btn btn-primary">C?</button>Dapibus ac facilisis in</li>
+                            <li class="list-group-item"><button class="btn btn-primary">C?</button>Vestibulum at eros</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <aside class="">
-            <button class="btn btn-primary shadow position-fixed" style="right: 1rem; bottom: 1rem;">
-                +
-            </button>
-        </aside>
+
     </main>
+
+
+
     <footer class="container-fluid bg-dark text-light">
         <div class="row text-center">
             <div class="col">
@@ -53,6 +96,12 @@
             </div>
         </div>
     </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <script src="app/main.js" type="module"></script>
 </body>
