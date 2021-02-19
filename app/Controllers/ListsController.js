@@ -9,6 +9,15 @@ function _draw() {
    listsElem.innerHTML = template
 }
 
+function _toggleDelete() {
+   let deleteItems = document.getElementsByClassName('delete-button-toggle')
+   for(let i = 0; i < deleteItems.length; i++) {
+      // TODO: 
+   }
+
+   console.log('Time to delete stuff!');
+}
+
 
 // Public
 export default class ListsController {
@@ -42,5 +51,9 @@ export default class ListsController {
 
    deleteListItem(itemId, listId) {
       listsService.deleteListItem(itemId, listId)
+   }
+
+   toggleDelete() {
+      _toggleDelete()
    }
 }
