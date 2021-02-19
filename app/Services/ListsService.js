@@ -20,6 +20,11 @@ class ListsService {
 
    listItemComplete(itemId, listId) {
       console.log('Completed list item:', itemId);
+
+      let item = ProxyState.lists.find(l => l.id == listId).items.find(i => i.id == itemId)
+      item.complete = !item.complete
+      ProxyState.lists = ProxyState.lists
+      console.log(item.id, item.complete);
    }
 
    deleteListItem(itemId, listId) {
@@ -34,6 +39,9 @@ class ListsService {
 
    deleteList(listId) {
       console.log('Tried to delete list:', listId);
+
+      let listIndex = ProxyState.lists.findIndex(l => l.id == listId)
+      ProxyState.lists.splice(listIndex, 1)
    }
 
 }

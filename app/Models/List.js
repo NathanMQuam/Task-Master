@@ -24,7 +24,7 @@ export default class List {
       let result = ''
       this.items.forEach(i => result += /*html*/`
          <li class="list-group-item">
-            <button class="btn btn-primary">C?</button>
+            <button class="btn btn-primary" onclick="app.listsController.listItemComplete('${i.id}', '${this.id}')">C?</button>
             ${i.name}
             <button class="btn btn-danger position-absolute" onclick="app.listsController.deleteListItem('${i.id}', '${this.id}')" style="right: 1rem;">Delete List Item</button>
          </li>

@@ -33,7 +33,7 @@ export default class ListsController {
    }
 
    listItemComplete(itemId, listId) {
-      listsService.listItemComplete(itemId)
+      listsService.listItemComplete(itemId, listId)
    }
 
    deleteList(listId) {
