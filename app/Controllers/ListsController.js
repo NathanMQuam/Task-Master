@@ -25,14 +25,14 @@ export default class ListsController {
       listsService.createList(rawList)
    }
 
-   createNewListItem(event) {
+   createNewListItem(event, listId) {
       event.preventDefault()
          let form = event.target;
-         let rawListItem = { itemTitle: form.itemTitle.value }
-      listsService.createListItem(rawListItem)
+         let rawListItem = form.itemTitle.value
+      listsService.createListItem(listId, rawListItem)
    }
 
-   listItemComplete(itemId) {
+   listItemComplete(itemId, listId) {
       listsService.listItemComplete(itemId)
    }
 
@@ -40,7 +40,7 @@ export default class ListsController {
       listsService.deleteList(listId)
    }
 
-   deleteListItem(itemId) {
-      listsService.deleteListItem(itemId)
+   deleteListItem(itemId, listId) {
+      listsService.deleteListItem(itemId, listId)
    }
 }
