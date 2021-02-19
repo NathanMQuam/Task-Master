@@ -1,7 +1,11 @@
+import { generateId } from "../Utils/GenerateId.js";
+
 export default class List {
-   constructor (data) {
-      this.title = data.title
-      this.color = data.color
+   constructor ( { title, color, id = generateId() } ) {
+      this.title = title
+      this.color = color
+      this.id = id
+      console.log('New List created:', this);
    }
 
    get Template() {

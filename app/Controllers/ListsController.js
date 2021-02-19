@@ -10,7 +10,7 @@ function _draw() {
 // Public
 export default class ListsController {
    constructor() {
-      ProxyState.on('', _draw)
+      ProxyState.on('lists', _draw)
       _draw()
       console.log('ListsController Initialized!');
    }
