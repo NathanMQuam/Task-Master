@@ -12,7 +12,13 @@ function _draw () {
 function _toggleDelete () {
    let deleteItems = document.getElementsByClassName( 'delete-button-toggle' )
    for ( let i = 0; i < deleteItems.length; i++ ) {
-      // TODO: 
+      let x = deleteItems.item( i )
+
+      if ( x.style.display === "none" ) {
+         x.style.display = "block";
+      } else {
+         x.style.display = "none";
+      }
    }
 
    console.log( 'Time to delete stuff!' );
@@ -32,6 +38,7 @@ export default class ListsController {
       let form = event.target;
       let rawList = { title: form.listTitle.value, color: form.listColor.value }
       listsService.createList( rawList )
+      $( '#exampleModal' ).modal( 'hide' )
    }
 
    createNewListItem ( event, listId ) {

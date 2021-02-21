@@ -25,8 +25,8 @@ export default class List {
       this.items.forEach( i => result += /*html*/`
          <li class="list-group-item">
             <button class="btn btn-primary" onclick="app.listsController.listItemComplete('${i.id}', '${this.id}')">C?</button>
-            ${i.name}
-            <button class="btn btn-danger position-absolute delete-button-toggle" onclick="app.listsController.deleteListItem('${i.id}', '${this.id}')" style="right: 1rem;" hidden>Delete List Item</button>
+            <div>${i.name}
+            <button class="btn btn-danger position-absolute delete-button-toggle" onclick="app.listsController.deleteListItem('${i.id}', '${this.id}')" style="right: 1rem; display: none;">Delete List Item</button></div>
          </li>
       `
       )
@@ -37,13 +37,13 @@ export default class List {
                <div class="card shadow">
                   <div class="card-header d-flex justify-content-between align-items-center">
                      <b>${this.title}</b>
-                     <form onsubmit="app.listsController.createNewListItem(event, '${this.id}')" class="delete-button-toggle">
+                     <form onsubmit="app.listsController.createNewListItem(event, '${this.id}')" class="delete-button-toggle" style="display: block;">
                         <input type="text" name="itemTitle" placeholder="New Task Name" required>
                         <button type="submit" class="btn btn-primary shadow-sm">
                            +
                         </button>
                      </form>
-                     <button type="button" class="delete-button-toggle" hidden>Delete this task list?</button>
+                     <button type="button" class="delete-button-toggle btn btn-danger" style="display: none;" onclick="app.listsController.deleteList('${this.id}')">Delete this task list?</button>
                   </div>
                   <ul class="list-group list-group-flush position-relative">
                         ${result}

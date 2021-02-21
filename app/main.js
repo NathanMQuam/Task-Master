@@ -12,7 +12,7 @@ window["app"] = new App();
  * TODO: All lists and tasks are rendered on load/reload
  * TODO: Lists are displayed out in columns across the page
  * DONE: Lists can be Created
- * TODO: Lists and tasks each have a delete button
+ * DONE: Lists and tasks each have a delete button
  * TODO: List creation must include a title limited to 3-15 characters
  * TODO: List creation must include a color picker or minimum 5 different colors
  * TODO: Lists include a count of all tasks compared to uncompleted tasks
