@@ -1,11 +1,11 @@
 import { generateId } from "../Utils/GenerateId.js";
 
 export default class List {
-   constructor( { title, color, id = generateId() } ) {
+   constructor( { title, color, id = generateId(), items = [] } ) {
       this.title = title
       this.color = color
       this.id = id
-      this.items = []
+      this.items = items
 
       console.log( 'New List created:', this );
    }

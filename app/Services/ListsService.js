@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import List from "../Models/List.js";
+import { saveState } from "../Utils/LocalStorage.js";
 
 function _updateLists () {
    ProxyState.lists = ProxyState.lists
@@ -8,7 +9,7 @@ function _updateLists () {
 class ListsService {
    constructor() {
       console.log( 'ListsService Initialized!' );
-      //ProxyState.on('lists', saveState)
+      ProxyState.on( 'lists', saveState )
    }
 
    createList ( { title, color } ) {
