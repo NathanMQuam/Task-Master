@@ -18,11 +18,11 @@ loadState()
  * TODO: Lists are displayed out in columns across the page
  * DONE: Lists can be Created
  * DONE: Lists and tasks each have a delete button
- * TODO: List creation must include a title limited to 3-15 characters
+ * DONE: List creation must include a title limited to 3-15 characters
  * TODO: List creation must include a color picker or minimum 5 different colors
  * TODO: Lists include a count of all tasks compared to uncompleted tasks
  * DONE: Each List must have its own Task form
- * TODO: Task title/body must be between 3-50 characters
+ * DONE: Task title/body must be between 3-50 characters
  * TODO: Tasks can be marked complete, this will persist on reload
  * DONE: Forms should not submit unless the fields adhere to the requirements
  * DONE: Lists can be Deleted

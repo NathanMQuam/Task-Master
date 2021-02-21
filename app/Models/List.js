@@ -38,7 +38,7 @@ export default class List {
                   <div class="card-header d-flex justify-content-between align-items-center">
                      <b>${this.title}</b>
                      <form onsubmit="app.listsController.createNewListItem(event, '${this.id}')" class="delete-button-toggle" style="display: block;">
-                        <input type="text" name="itemTitle" placeholder="New Task Name" required>
+                        <input type="text" name="itemTitle" placeholder="New Task Name" minLength="3" maxLength="50" required>
                         <button type="submit" class="btn btn-primary shadow-sm">
                            +
                         </button>
