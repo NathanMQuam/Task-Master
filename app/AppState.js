@@ -10,15 +10,15 @@ class AppState extends EventEmitter {
   lists = []
 }
 
-export const ProxyState = new Proxy(new AppState(), {
-  get(target, prop) {
-    isValidProp(target, prop)
+export const ProxyState = new Proxy( new AppState(), {
+  get ( target, prop ) {
+    isValidProp( target, prop )
     return target[prop]
   },
-  set(target, prop, value) {
-    isValidProp(target, prop)
+  set ( target, prop, value ) {
+    isValidProp( target, prop )
     target[prop] = value
-    target.emit(prop, value)
+    target.emit( prop, value )
     return true
   }
-})
+} )

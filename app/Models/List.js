@@ -1,28 +1,28 @@
 import { generateId } from "../Utils/GenerateId.js";
 
 export default class List {
-   constructor ( { title, color, id = generateId() } ) {
+   constructor( { title, color, id = generateId() } ) {
       this.title = title
       this.color = color
       this.id = id
       this.items = []
 
-      console.log('New List created:', this);
+      console.log( 'New List created:', this );
    }
 
-   addItem(itemName) {
-      console.log('item:', itemName,'added to list:', this.title, this.id)
+   addItem ( itemName ) {
+      console.log( 'item:', itemName, 'added to list:', this.title, this.id )
 
-      this.items.push({name: itemName, id: generateId(), complete: false})
+      this.items.push( { name: itemName, id: generateId(), complete: false } )
    }
 
-   toggleItemComplete(itemId) {
-      console.log('toggle complete:', itemId)
+   toggleItemComplete ( itemId ) {
+      console.log( 'toggle complete:', itemId )
    }
 
-   get Template() {
+   get Template () {
       let result = ''
-      this.items.forEach(i => result += /*html*/`
+      this.items.forEach( i => result += /*html*/`
          <li class="list-group-item">
             <button class="btn btn-primary" onclick="app.listsController.listItemComplete('${i.id}', '${this.id}')">C?</button>
             ${i.name}
