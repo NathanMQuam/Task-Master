@@ -14,7 +14,7 @@ loadState()
 
 
 /** NOTE: Requirements
- * TODO: All lists and tasks are rendered on load/reload
+ * DONE: All lists and tasks are rendered on load/reload
  * TODO: Lists are displayed out in columns across the page
  * DONE: Lists can be Created
  * DONE: Lists and tasks each have a delete button
@@ -24,11 +24,11 @@ loadState()
  * DONE: Each List must have its own Task form
  * TODO: Task title/body must be between 3-50 characters
  * TODO: Tasks can be marked complete, this will persist on reload
- * TODO: Forms should not submit unless the fields adhere to the requirements
- * TODO: Lists can be Deleted
+ * DONE: Forms should not submit unless the fields adhere to the requirements
+ * DONE: Lists can be Deleted
  * DONE: Tasks can be Deleted (separate from being marked complete)
  * TODO: Users are prompted to confirm any delete (search window.confirm)
- * TODO: All Data persists through local storage
+ * DONE: All Data persists through local storage
 */
 
 /** NOTE: Stretch Goals
