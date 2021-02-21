@@ -32,23 +32,21 @@ export default class List {
       )
 
       return /*html*/`
-         <div class="row py-3" id="row1">
-            <div class="col">
-               <div class="card shadow">
-                  <div class="card-header d-flex justify-content-between align-items-center">
-                     <b>${this.title}</b>
-                     <form onsubmit="app.listsController.createNewListItem(event, '${this.id}')" class="delete-button-toggle" style="display: block;">
-                        <input type="text" name="itemTitle" placeholder="New Task Name" minLength="3" maxLength="50" required>
-                        <button type="submit" class="btn btn-primary shadow-sm">
-                           +
-                        </button>
-                     </form>
-                     <button type="button" class="delete-button-toggle btn btn-danger" style="display: none;" onclick="app.listsController.deleteList('${this.id}')">Delete this task list?</button>
-                  </div>
-                  <ul class="list-group list-group-flush position-relative">
-                        ${result}
-                  </ul>
+         <div class="col">
+            <div class="card shadow">
+               <div class="card-header d-flex justify-content-between align-items-center">
+                  <b>${this.title}</b>
+                  <form onsubmit="app.listsController.createNewListItem(event, '${this.id}')" class="delete-button-toggle" style="display: block;">
+                     <input type="text" name="itemTitle" placeholder="New Task Name" minLength="3" maxLength="50" required>
+                     <button type="submit" class="btn btn-primary shadow-sm">
+                        +
+                     </button>
+                  </form>
+                  <button type="button" class="delete-button-toggle btn btn-danger" style="display: none;" onclick="app.listsController.deleteList('${this.id}')">Delete this task list?</button>
                </div>
+               <ul class="list-group list-group-flush position-relative">
+                     ${result}
+               </ul>
             </div>
          </div>
       `

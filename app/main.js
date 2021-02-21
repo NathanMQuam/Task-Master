@@ -15,7 +15,7 @@ loadState()
 
 /** NOTE: Requirements
  * DONE: All lists and tasks are rendered on load/reload
- * TODO: Lists are displayed out in columns across the page
+ * DONE: Lists are displayed out in columns across the page
  * DONE: Lists can be Created
  * DONE: Lists and tasks each have a delete button
  * DONE: List creation must include a title limited to 3-15 characters
