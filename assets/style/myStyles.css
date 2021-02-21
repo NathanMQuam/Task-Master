@@ -1,0 +1,8 @@
+.list-title {
+    color: white !important;
+    text-shadow:
+        2px 2px 2.5px #000,
+        -1px 1px 1.5px #000,
+        -1px -1px 1.5px #000,
+        1px -1px 1.5px #000;
+}

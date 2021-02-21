@@ -19,7 +19,7 @@ loadState()
  * DONE: Lists can be Created
  * DONE: Lists and tasks each have a delete button
  * DONE: List creation must include a title limited to 3-15 characters
- * TODO: List creation must include a color picker or minimum 5 different colors
+ * DONE: List creation must include a color picker or minimum 5 different colors
  * TODO: Lists include a count of all tasks compared to uncompleted tasks
  * DONE: Each List must have its own Task form
  * DONE: Task title/body must be between 3-50 characters
