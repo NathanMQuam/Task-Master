@@ -22,20 +22,28 @@ export default class List {
 
    get Template () {
       let result = ''
-      this.items.forEach( i => result += /*html*/`
-         <li class="list-group-item">
-            <button class="btn btn-primary" onclick="app.listsController.listItemComplete('${i.id}', '${this.id}')">C?</button>
-            ${i.name}
-            <button class="btn btn-danger position-absolute delete-button-toggle" onclick="app.listsController.deleteListItem('${i.id}', '${this.id}')" style="right: 1rem; top: 0.5rem; display: none;">Delete List Item</button>
-         </li>
-      `
+      let tasksRemaining = 0
+      this.items.forEach( i => {
+         let check = i.complete ? 'fa-check-circle' : 'fa-circle'
+         //<button class="btn btn-primary" onclick="app.listsController.listItemComplete('${i.id}', '${this.id}')">${check}</button>
+         result += /*html*/`
+            <li class="list-group-item">
+               <i class="btn btn-primary fa ${check}" onclick="app.listsController.listItemComplete('${i.id}', '${this.id}')"></i>
+               ${i.complete ? '<s>' + i.name + '</s>' : i.name}
+               <button class="btn btn-danger position-absolute delete-button-toggle" onclick="app.listsController.deleteListItem('${i.id}', '${this.id}')" style="right: 1rem; top: 0.5rem; display: none;">Delete List Item</button>
+            </li>
+         `
+         if ( !i.complete )
+            tasksRemaining++
+      }
       )
 
       return /*html*/`
          <div class="col">
             <div class="card shadow">
-               <div class="card-header d-flex justify-content-between align-items-center" style="background-color: ${this.color};">
-                  <b class="list-title">${this.title}</b>
+               <div class="card-header d-flex justify-content-between align-items-center list-title" style="background-color: ${this.color};">
+                  <b>${this.title}</b>
+                  <span>Tasks remaining: ${tasksRemaining}/${this.items.length}</span>
                   <form onsubmit="app.listsController.createNewListItem(event, '${this.id}')" class="delete-button-toggle" style="display: block;">
                      <input type="text" name="itemTitle" placeholder="New Task Name" minLength="3" maxLength="50" required>
                      <button type="submit" class="btn btn-primary shadow-sm">
